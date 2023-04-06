@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="1257.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.20557768924302788" prefHeight="160.0" prefWidth="200.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="649.0" prefWidth="210.0">
+               <children>
+                  <VBox layoutX="61.0" layoutY="34.0" prefHeight="518.0" prefWidth="239.0" AnchorPane.bottomAnchor="131.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="401.0" prefWidth="255.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="228.0" prefWidth="227.0">
+                                 <children>
+                                    <ImageView blendMode="MULTIPLY" fitHeight="228.0" fitWidth="265.0" layoutX="13.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@giaodien/images/3124543.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="76.0" layoutY="191.0" prefHeight="30.0" prefWidth="102.0" text="Hi , ">
+                                       <font>
+                                          <Font name="Segoe UI Black Italic" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="108.0" layoutY="191.0" prefHeight="30.0" prefWidth="102.0" text="admin !">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="196.0" prefWidth="257.0">
+                                 <children>
+                                    <GridPane layoutX="6.0" layoutY="7.0" prefHeight="197.0" prefWidth="253.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="253.0" minWidth="10.0" prefWidth="253.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.0" minWidth="0.0" prefWidth="0.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="120.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="67.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Button mnemonicParsing="false" prefHeight="67.0" prefWidth="259.0" text="          QUẢN LÝ NHÂN VIÊN">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Button>
+                                          <Button layoutX="58.0" layoutY="15.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="259.0" text="       QUẢN LÝ CHỨC VỤ" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Button>
+                                          <Button layoutX="58.0" layoutY="91.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="253.0" text="Save as" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Button>
+                                          <ImageView blendMode="DARKEN" fitHeight="66.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@giaodien/images/4558293.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="58.0" fitWidth="62.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                                             <image>
+                                                <Image url="@giaodien/images/4565295.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </VBox>
+                  <Button layoutX="1.0" layoutY="611.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="112.0" text="Thoát" />
+                  <ImageView fitHeight="38.0" fitWidth="32.0" layoutX="1.0" layoutY="605.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="44.0" fitWidth="32.0" layoutX="1.0" layoutY="614.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@giaodien/images/login.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="649.0" prefWidth="819.0">
+               <children>
+                  <AnchorPane layoutX="29.0" layoutY="117.0" prefHeight="532.0" prefWidth="895.0">
+                     <children>
+                        <TableView layoutX="204.0" layoutY="47.0" prefHeight="410.0" prefWidth="874.0" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="47.0">
+                          <columns>
+                            <TableColumn prefWidth="90.0" text="ID" />
+                            <TableColumn prefWidth="164.0" text="Name" />
+                              <TableColumn minWidth="6.0" prefWidth="128.0" text="Birthday" />
+                              <TableColumn prefWidth="187.0" text="Email" />
+                              <TableColumn prefWidth="116.0" text="Position" />
+                              <TableColumn prefWidth="60.0" text="Workday" />
+                              <TableColumn prefWidth="128.0" text="Salary" />
+                          </columns>
+                        </TableView>
+                        <Button alignment="BASELINE_RIGHT" layoutX="351.0" layoutY="6.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="78.0" text="Delete" />
+                        <Button alignment="BASELINE_RIGHT" layoutX="224.0" layoutY="6.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="67.0" text="Add" />
+                        <ImageView fitHeight="32.0" fitWidth="31.0" layoutX="224.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@giaodien/images/person_add_FILL1_wght400_GRAD0_opsz48.png" />
+                           </image>
+                        </ImageView>
+                        <Button alignment="BASELINE_RIGHT" layoutX="291.0" layoutY="6.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="60.0" text="Edit" />
+                        <ImageView fitHeight="32.0" fitWidth="30.0" layoutX="291.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@giaodien/images/outline_edit_black_24dp.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="38.0" fitWidth="30.0" layoutX="351.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@giaodien/images/person_remove_FILL1_wght400_GRAD0_opsz48.png" />
+                           </image>
+                        </ImageView>
+                        <TextField alignment="BASELINE_LEFT" layoutX="82.0" layoutY="7.0" prefHeight="30.0" prefWidth="142.0" />
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="52.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@giaodien/images/person_search_FILL1_wght400_GRAD0_opsz48.png" />
+                           </image>
+                        </ImageView>
+                        <TextField alignment="BASELINE_RIGHT" layoutX="429.0" layoutY="6.0" prefHeight="32.0" prefWidth="60.0" />
+                        <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="431.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@giaodien/images/outline_filter_alt_black_24dp.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="116.0" layoutY="136.0" prefHeight="417.0" prefWidth="453.0" visible="false">
+                     <children>
+                        <TableView layoutX="2.0" layoutY="83.0" prefHeight="307.0" prefWidth="453.0">
+                          <columns>
+                            <TableColumn prefWidth="231.0" text="Position Name" />
+                            <TableColumn prefWidth="221.0" text="Salary Coefficient" />
+                          </columns>
+                        </TableView>
+                        <Button alignment="BASELINE_RIGHT" layoutX="69.0" layoutY="37.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="67.0" text="Edit" />
+                        <Button alignment="BASELINE_RIGHT" layoutX="2.0" layoutY="36.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="67.0" text="Add" />
+                        <Button alignment="BASELINE_RIGHT" layoutX="136.0" layoutY="37.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="78.0" text="Delete" />
+                        <ImageView fitHeight="32.0" fitWidth="30.0" layoutX="69.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@giaodien/images/outline_edit_black_24dp.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="2.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@giaodien/images/outline_add_black_24dp.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="137.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@giaodien/images/outline_delete_black_24dp.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</StackPane>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="194.0" minWidth="2.0" prefWidth="28.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="272.0" minWidth="10.0" prefWidth="174.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="214.0" minWidth="0.0" prefWidth="43.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="568.0" minWidth="10.0" prefWidth="383.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="469.0" minWidth="0.0" prefWidth="30.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints maxHeight="147.0" minHeight="0.0" prefHeight="34.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="310.0" minHeight="10.0" prefHeight="202.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="322.0" minHeight="10.0" prefHeight="308.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="264.0" minHeight="5.0" prefHeight="8.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <ImageView fitHeight="187.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <image>
+            <Image url="@images/avt1.jpg" />
+         </image>
+      </ImageView>
+      <VBox prefHeight="190.0" prefWidth="288.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+         <children>
+            <HBox prefHeight="30.0" prefWidth="326.0">
+               <children>
+                  <Label alignment="BOTTOM_RIGHT" prefHeight="40.0" prefWidth="14.0" text="ID">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BOTTOM_LEFT" prefHeight="40.0" prefWidth="205.0" text=" *" textFill="RED" />
+                  <Label alignment="BOTTOM_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="63.0" text="Gender">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="60.0" text=" *" textFill="RED" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="326.0">
+               <children>
+                  <TextField prefHeight="35.0" prefWidth="149.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label prefHeight="35.0" prefWidth="94.0" />
+                  <RadioButton mnemonicParsing="false" prefHeight="39.0" prefWidth="71.0" text="Male">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="gender" />
+                     </toggleGroup>
+                     <font>
+                        <Font size="13.0" />
+                     </font></RadioButton>
+                  <RadioButton layoutX="198.0" layoutY="10.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="76.0" text="Female" toggleGroup="$gender">
+                     <font>
+                        <Font size="13.0" />
+                     </font></RadioButton>
+               </children>
+            </HBox>
+            <HBox prefHeight="30.0" prefWidth="315.0">
+               <children>
+                  <Label alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="77.0" text="First Name(s)">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="162.0" text=" *" textFill="RED" />
+                  <Label alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="47.0" text="Position">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="34.0" text=" *" textFill="RED" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="57.0" prefHeight="35.0" prefWidth="326.0">
+               <children>
+                  <TextField prefHeight="35.0" prefWidth="171.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label prefHeight="35.0" prefWidth="70.0" />
+                  <ComboBox prefHeight="35.0" prefWidth="141.0" promptText="                         ................" />
+               </children>
+            </HBox>
+            <HBox prefHeight="30.0" prefWidth="315.0">
+               <children>
+                  <Label alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="63.0" text="Last Name">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="170.0" text=" *" textFill="RED" />
+                  <Label alignment="BOTTOM_RIGHT" prefHeight="30.0" prefWidth="61.0" text="Workday">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BOTTOM_LEFT" prefHeight="40.0" prefWidth="60.0" text=" *" textFill="RED" />
+               </children>
+            </HBox>
+            <HBox prefHeight="35.0" prefWidth="326.0">
+               <children>
+                  <TextField prefHeight="35.0" prefWidth="210.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label prefHeight="35.0" prefWidth="32.0" />
+                  <TextField prefHeight="35.0" prefWidth="58.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+         <children>
+            <HBox prefHeight="19.0" prefWidth="383.0">
+               <children>
+                  <Label alignment="TOP_LEFT" prefHeight="19.0" prefWidth="31.0" text="Email">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BOTTOM_LEFT" prefHeight="19.0" prefWidth="207.0" text=" *" textFill="RED" />
+                  <Label alignment="BOTTOM_RIGHT" prefHeight="30.0" prefWidth="53.0" text="Birthday">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BOTTOM_LEFT" prefHeight="19.0" prefWidth="12.0" text=" *" textFill="RED" />
+               </children>
+            </HBox>
+            <HBox prefHeight="35.0" prefWidth="383.0">
+               <children>
+                  <TextField prefHeight="35.0" prefWidth="214.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label prefHeight="35.0" prefWidth="35.0" />
+                  <TextField prefHeight="35.0" prefWidth="142.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="30.0" prefWidth="315.0">
+               <children>
+                  <Label alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="77.0" text="Note:...">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="94.0" prefWidth="383.0">
+               <children>
+                  <TextField alignment="TOP_LEFT" prefHeight="86.0" prefWidth="382.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <AnchorPane prefHeight="103.0" prefWidth="383.0">
+               <children>
+                  <Button layoutX="84.0" layoutY="33.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="115.0" text="OK" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <ImageView fitHeight="277.0" fitWidth="206.0" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <image>
+            <Image url="@images/2e2fn.jpg" />
+         </image></ImageView>
+   </children>
+</GridPane>

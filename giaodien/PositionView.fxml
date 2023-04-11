@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="910.0">
+         <children>
+            <AnchorPane layoutX="14.0" layoutY="28.0" prefHeight="386.0" prefWidth="521.0">
+               <children>
+                  <Button alignment="BASELINE_RIGHT" layoutX="56.0" layoutY="25.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="71.0" text="Add">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="BASELINE_RIGHT" layoutX="198.0" layoutY="25.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="83.0" text="Delete">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="BASELINE_RIGHT" layoutX="127.0" layoutY="25.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="71.0" text="Edit">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="35.0" fitWidth="39.0" layoutX="56.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/outline_add_black_24dp.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="35.0" fitWidth="34.0" layoutX="127.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/outline_edit_black_24dp.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="35.0" fitWidth="34.0" layoutX="198.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/outline_delete_black_24dp.png" />
+                     </image>
+                  </ImageView>
+                  <TableView layoutX="56.0" layoutY="90.0" prefHeight="305.0" prefWidth="486.0">
+                    <columns>
+                      <TableColumn prefWidth="233.0" text="Position Name" />
+                      <TableColumn prefWidth="253.0" text="Salary Coefficent" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="386.0" fitWidth="345.0" layoutX="551.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/building-icon-png-8.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

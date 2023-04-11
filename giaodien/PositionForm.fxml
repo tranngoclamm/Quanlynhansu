@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="352.0" prefWidth="602.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="265.0" minWidth="10.0" prefWidth="195.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="463.0" minWidth="10.0" prefWidth="398.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="0.0" prefWidth="8.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="165.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="316.0" minHeight="10.0" prefHeight="128.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="218.0" minHeight="0.0" prefHeight="140.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="146.0" minHeight="0.0" prefHeight="20.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox prefHeight="149.0" prefWidth="463.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <HBox prefHeight="40.0" prefWidth="463.0">
+                     <children>
+                        <Label alignment="BASELINE_RIGHT" prefHeight="50.0" prefWidth="114.0" text="Position Name ">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="32.0" text="*" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField prefHeight="40.0" prefWidth="244.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <Label prefHeight="27.0" prefWidth="403.0" />
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="463.0">
+                     <children>
+                        <Label alignment="BASELINE_RIGHT" prefHeight="72.0" prefWidth="129.0" text="Salary Coefficient">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="48.0" prefWidth="18.0" text=" *" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="243.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox prefHeight="48.0" prefWidth="463.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Pane prefHeight="171.0" prefWidth="489.0">
+                     <children>
+                        <Button layoutX="102.0" layoutY="39.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="114.0" text="OK">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+            <ImageView fitHeight="271.0" fitWidth="222.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@images/65999-200.png" />
+               </image>
+            </ImageView>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

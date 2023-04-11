@@ -7,6 +7,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 
+
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="194.0" minWidth="2.0" prefWidth="28.0" />
@@ -59,11 +60,13 @@
                      </toggleGroup>
                      <font>
                         <Font size="13.0" />
-                     </font></RadioButton>
+                     </font>
+                  </RadioButton>
                   <RadioButton layoutX="198.0" layoutY="10.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="76.0" text="Female" toggleGroup="$gender">
                      <font>
                         <Font size="13.0" />
-                     </font></RadioButton>
+                     </font>
+                  </RadioButton>
                </children>
             </HBox>
             <HBox prefHeight="30.0" prefWidth="315.0">
@@ -187,6 +190,7 @@
       <ImageView fitHeight="277.0" fitWidth="206.0" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <image>
             <Image url="@images/2e2fn.jpg" />
-         </image></ImageView>
+         </image>
+      </ImageView>
    </children>
 </GridPane>

@@ -6,8 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.LoginController">
    <children>
       <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="387.0" prefWidth="491.0">
          <children>
@@ -35,15 +34,15 @@
                   </ImageView>
                   <AnchorPane prefHeight="66.0" prefWidth="329.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
                      <children>
-                        <PasswordField layoutY="21.0" prefHeight="25.0" prefWidth="337.0" promptText="12345" text="12345" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                        <Label layoutX="183.0" layoutY="50.0" prefHeight="16.0" prefWidth="154.0" text="Invalid Login. Please try again." textFill="#ee0c0c" visible="false">
+                        <PasswordField fx:id="passwordTextField" layoutY="21.0" prefHeight="25.0" prefWidth="337.0" promptText="12345" text="12345" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <Label fx:id="loginErrorLabel" layoutX="183.0" layoutY="50.0" prefHeight="16.0" prefWidth="154.0" textFill="#ee0c0c">
                            <font>
                               <Font size="11.0" />
                            </font>
                         </Label>
                      </children>
                   </AnchorPane>
-                  <TextField prefHeight="25.0" prefWidth="257.0" promptText="Admin" text="admin" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <TextField fx:id="usernameTextField" prefHeight="25.0" prefWidth="257.0" promptText="Admin" text="admin" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                   <ImageView fitHeight="47.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
                      <image>
                         <Image url="@images/username.png" />
@@ -54,7 +53,7 @@
                         <Image url="@images/key.png" />
                      </image>
                   </ImageView>
-                  <Button contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="25.0" prefWidth="346.0" text="Login" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <Button fx:id="login" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="25.0" prefWidth="346.0" text="Login" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                   <ImageView fitHeight="24.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="5">
                      <image>
                         <Image url="@images/login.png" />
@@ -64,7 +63,7 @@
                   <Label alignment="BASELINE_RIGHT" layoutX="10.0" layoutY="84.0" prefHeight="17.0" prefWidth="81.0" text="Username" GridPane.rowIndex="3" />
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                      <children>
-                        <Hyperlink alignment="TOP_RIGHT" contentDisplay="BOTTOM" layoutX="231.0" layoutY="3.0" prefHeight="17.0" prefWidth="106.0" text="Forget Password?" />
+                        <Hyperlink alignment="TOP_RIGHT" contentDisplay="BOTTOM" layoutX="231.0" layoutY="3.0" onAction="#forgetPassword" prefHeight="17.0" prefWidth="106.0" text="Forget Password?" />
                      </children>
                   </AnchorPane>
                </children>

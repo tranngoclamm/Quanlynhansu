@@ -6,44 +6,43 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="PositionView" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.PositionController">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="910.0">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="915.0" AnchorPane.leftAnchor="29.0" AnchorPane.topAnchor="120.0">
          <children>
-            <AnchorPane layoutX="14.0" layoutY="28.0" prefHeight="386.0" prefWidth="521.0">
+            <AnchorPane prefHeight="410.0" prefWidth="566.0">
                <children>
-                  <Button alignment="BASELINE_RIGHT" layoutX="56.0" layoutY="25.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="71.0" text="Add">
+                  <Button alignment="BASELINE_RIGHT" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#addPosition" prefHeight="35.0" prefWidth="71.0" text="Add">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button alignment="BASELINE_RIGHT" layoutX="198.0" layoutY="25.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="83.0" text="Delete">
+                  <Button alignment="BASELINE_RIGHT" layoutX="156.0" layoutY="14.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="83.0" text="Delete">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button alignment="BASELINE_RIGHT" layoutX="127.0" layoutY="25.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="71.0" text="Edit">
+                  <Button alignment="BASELINE_RIGHT" layoutX="85.0" layoutY="14.0" mnemonicParsing="false" onAction="#editPosition" prefHeight="35.0" prefWidth="71.0" text="Edit">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <ImageView fitHeight="35.0" fitWidth="39.0" layoutX="56.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="35.0" fitWidth="39.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/outline_add_black_24dp.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="35.0" fitWidth="34.0" layoutX="127.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="35.0" fitWidth="34.0" layoutX="85.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/outline_edit_black_24dp.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="35.0" fitWidth="34.0" layoutX="198.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="35.0" fitWidth="34.0" layoutX="156.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/outline_delete_black_24dp.png" />
                      </image>
                   </ImageView>
-                  <TableView layoutX="56.0" layoutY="90.0" prefHeight="305.0" prefWidth="486.0">
+                  <TableView layoutX="14.0" layoutY="68.0" prefHeight="305.0" prefWidth="486.0">
                     <columns>
                       <TableColumn prefWidth="233.0" text="Position Name" />
                       <TableColumn prefWidth="253.0" text="Salary Coefficent" />
@@ -51,7 +50,7 @@
                   </TableView>
                </children>
             </AnchorPane>
-            <ImageView fitHeight="386.0" fitWidth="345.0" layoutX="551.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="386.0" fitWidth="345.0" layoutX="549.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/building-icon-png-8.jpg" />
                </image>

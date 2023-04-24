@@ -35,7 +35,7 @@
                   <AnchorPane prefHeight="66.0" prefWidth="329.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
                      <children>
                         <PasswordField fx:id="passwordTextField" layoutY="21.0" prefHeight="25.0" prefWidth="337.0" promptText="12345" text="12345" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                        <Label fx:id="loginErrorLabel" layoutX="183.0" layoutY="50.0" prefHeight="16.0" prefWidth="154.0" textFill="#ee0c0c">
+                        <Label fx:id="loginErrorLabel" alignment="BASELINE_RIGHT" layoutX="183.0" layoutY="50.0" prefHeight="16.0" prefWidth="151.0" textFill="#ee0c0c">
                            <font>
                               <Font size="11.0" />
                            </font>

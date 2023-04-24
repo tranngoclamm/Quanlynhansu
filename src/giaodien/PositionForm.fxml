@@ -6,8 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.PositionCon">
    <children>
       <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="352.0" prefWidth="602.0">
         <columnConstraints>
@@ -36,7 +35,7 @@
                               <Font size="13.0" />
                            </font>
                         </Label>
-                        <TextField prefHeight="40.0" prefWidth="244.0">
+                        <TextField fx:id="positionNameTextField" prefHeight="40.0" prefWidth="244.0">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -56,7 +55,7 @@
                               <Font size="13.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="243.0">
+                        <TextField fx:id="salaryCoefficientTextField" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="243.0">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -69,7 +68,7 @@
                <children>
                   <Pane prefHeight="171.0" prefWidth="489.0">
                      <children>
-                        <Button layoutX="102.0" layoutY="39.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="114.0" text="OK">
+                        <Button fx:id="saveButton" layoutX="102.0" layoutY="39.0" mnemonicParsing="false" onAction="#handleSaveButton" prefHeight="40.0" prefWidth="114.0" text="OK">
                            <font>
                               <Font size="14.0" />
                            </font>

@@ -12,17 +12,17 @@
          <children>
             <AnchorPane prefHeight="410.0" prefWidth="566.0">
                <children>
-                  <Button alignment="BASELINE_RIGHT" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#addPosition" prefHeight="35.0" prefWidth="71.0" text="Add">
+                  <Button fx:id="addPosition" alignment="BASELINE_RIGHT" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="35.0" prefWidth="71.0" text="Add">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button alignment="BASELINE_RIGHT" layoutX="156.0" layoutY="14.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="83.0" text="Delete">
+                  <Button alignment="BASELINE_RIGHT" layoutX="156.0" layoutY="14.0" mnemonicParsing="false" onAction="#deletePosition" prefHeight="35.0" prefWidth="83.0" text="Delete">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button alignment="BASELINE_RIGHT" layoutX="85.0" layoutY="14.0" mnemonicParsing="false" onAction="#editPosition" prefHeight="35.0" prefWidth="71.0" text="Edit">
+                  <Button fx:id="editPosition" alignment="BASELINE_RIGHT" layoutX="85.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleEditButton" prefHeight="35.0" prefWidth="71.0" text="Edit">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -42,12 +42,22 @@
                         <Image url="@images/outline_delete_black_24dp.png" />
                      </image>
                   </ImageView>
-                  <TableView layoutX="14.0" layoutY="68.0" prefHeight="305.0" prefWidth="486.0">
+                  <TableView fx:id="positionTableView" layoutX="14.0" layoutY="68.0" prefHeight="305.0" prefWidth="486.0">
                     <columns>
-                      <TableColumn prefWidth="233.0" text="Position Name" />
-                      <TableColumn prefWidth="253.0" text="Salary Coefficent" />
+                      <TableColumn fx:id="chucVuColumn" prefWidth="233.0" text="Position Name" />
+                      <TableColumn fx:id="heSoLuongColumn" prefWidth="253.0" text="Salary Coefficent" />
                     </columns>
                   </TableView>
+                  <Button alignment="BASELINE_RIGHT" layoutX="239.0" layoutY="14.0" mnemonicParsing="false" onAction="#saveBinaryPositionData" prefHeight="35.0" prefWidth="76.0" text="Save">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="35.0" fitWidth="34.0" layoutX="239.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/save_as_F4.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
             <ImageView fitHeight="386.0" fitWidth="345.0" layoutX="549.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">

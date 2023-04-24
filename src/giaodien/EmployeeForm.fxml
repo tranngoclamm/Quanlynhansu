@@ -7,8 +7,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 
-
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.EmployeeCon">
   <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="194.0" minWidth="2.0" prefWidth="28.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="272.0" minWidth="10.0" prefWidth="174.0" />
@@ -48,21 +47,21 @@
             </HBox>
             <HBox layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="326.0">
                <children>
-                  <TextField prefHeight="35.0" prefWidth="149.0">
+                  <TextField fx:id="idTextField" prefHeight="35.0" prefWidth="149.0">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </TextField>
                   <Label prefHeight="35.0" prefWidth="94.0" />
-                  <RadioButton mnemonicParsing="false" prefHeight="39.0" prefWidth="71.0" text="Male">
+                  <RadioButton fx:id="maleRadioButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="71.0" selected="true" text="Male">
                      <toggleGroup>
-                        <ToggleGroup fx:id="gender" />
+                        <ToggleGroup fx:id="genderToggleGroup" />
                      </toggleGroup>
                      <font>
                         <Font size="13.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton layoutX="198.0" layoutY="10.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="76.0" text="Female" toggleGroup="$gender">
+                  <RadioButton fx:id="femaleRadioButton" layoutX="198.0" layoutY="10.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="76.0" text="Female" toggleGroup="$genderToggleGroup">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -82,18 +81,17 @@
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="34.0" text=" *" textFill="RED" />
                </children>
             </HBox>
             <HBox layoutX="10.0" layoutY="57.0" prefHeight="35.0" prefWidth="326.0">
                <children>
-                  <TextField prefHeight="35.0" prefWidth="171.0">
+                  <TextField fx:id="firstNameTextField" prefHeight="35.0" prefWidth="171.0">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </TextField>
                   <Label prefHeight="35.0" prefWidth="70.0" />
-                  <ComboBox prefHeight="35.0" prefWidth="141.0" promptText="                         ................" />
+                  <ComboBox fx:id="positionComboBox" prefHeight="35.0" prefWidth="141.0" promptText="                         ................" />
                </children>
             </HBox>
             <HBox prefHeight="30.0" prefWidth="315.0">
@@ -104,23 +102,22 @@
                      </font>
                   </Label>
                   <Label alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="170.0" text=" *" textFill="RED" />
-                  <Label alignment="BOTTOM_RIGHT" prefHeight="30.0" prefWidth="61.0" text="Workday">
+                  <Label alignment="BOTTOM_RIGHT" prefHeight="30.0" prefWidth="96.0" text="Workday (0-31)">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label alignment="BOTTOM_LEFT" prefHeight="40.0" prefWidth="60.0" text=" *" textFill="RED" />
                </children>
             </HBox>
             <HBox prefHeight="35.0" prefWidth="326.0">
                <children>
-                  <TextField prefHeight="35.0" prefWidth="210.0">
+                  <TextField fx:id="lastNameTextField" prefHeight="35.0" prefWidth="210.0">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </TextField>
                   <Label prefHeight="35.0" prefWidth="32.0" />
-                  <TextField prefHeight="35.0" prefWidth="58.0">
+                  <TextField fx:id="workdayTextField" prefHeight="35.0" prefWidth="58.0">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -149,13 +146,13 @@
             </HBox>
             <HBox prefHeight="35.0" prefWidth="383.0">
                <children>
-                  <TextField prefHeight="35.0" prefWidth="214.0">
+                  <TextField fx:id="emailTextField" prefHeight="35.0" prefWidth="214.0">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </TextField>
                   <Label prefHeight="35.0" prefWidth="35.0" />
-                  <TextField prefHeight="35.0" prefWidth="142.0">
+                  <TextField fx:id="birthdayTextField" prefHeight="35.0" prefWidth="142.0">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -173,7 +170,7 @@
             </HBox>
             <HBox prefHeight="94.0" prefWidth="383.0">
                <children>
-                  <TextField alignment="TOP_LEFT" prefHeight="86.0" prefWidth="382.0">
+                  <TextField fx:id="noteTextField" alignment="TOP_LEFT" prefHeight="86.0" prefWidth="382.0">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -182,7 +179,7 @@
             </HBox>
             <AnchorPane prefHeight="103.0" prefWidth="383.0">
                <children>
-                  <Button layoutX="84.0" layoutY="33.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="115.0" text="OK" />
+                  <Button fx:id="saveButton" layoutX="84.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleSaveButton" prefHeight="37.0" prefWidth="115.0" text="OK" />
                </children>
             </AnchorPane>
          </children>

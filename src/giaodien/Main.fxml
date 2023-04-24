@@ -61,7 +61,7 @@
                                                       <Font name="System Bold" size="15.0" />
                                                    </font>
                                                 </Button>
-                                                <Button layoutX="58.0" layoutY="91.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="253.0" text="Save as" GridPane.rowIndex="2">
+                                                <Button layoutX="58.0" layoutY="91.0" mnemonicParsing="false" onAction="#handleSaveAs" prefHeight="67.0" prefWidth="253.0" text="Save as" GridPane.rowIndex="2">
                                                    <font>
                                                       <Font name="System Bold" size="15.0" />
                                                    </font>
@@ -97,27 +97,30 @@
                      <children>
                         <AnchorPane fx:id="employeeView" layoutX="29.0" layoutY="120.0" prefHeight="529.0" prefWidth="915.0" AnchorPane.leftAnchor="29.0" AnchorPane.topAnchor="120.0">
                            <children>
-                              <TableView layoutX="204.0" layoutY="47.0" prefHeight="417.0" prefWidth="895.0" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="47.0">
+                              <TableView fx:id="employeeTableView" layoutX="204.0" layoutY="47.0" prefHeight="417.0" prefWidth="895.0" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="47.0">
                                 <columns>
-                                  <TableColumn prefWidth="82.0" text="ID" />
-                                  <TableColumn prefWidth="155.0" text="Name" />
-                                    <TableColumn minWidth="6.0" prefWidth="97.0" text="Birthday" />
-                                    <TableColumn prefWidth="61.0" text="Gender" />
-                                    <TableColumn prefWidth="177.0" text="Email" />
-                                    <TableColumn prefWidth="98.0" text="Position" />
-                                    <TableColumn prefWidth="42.0" text="Coeff" />
-                                    <TableColumn prefWidth="59.0" text="Workday" />
-                                    <TableColumn minWidth="0.0" prefWidth="143.0" text="Salary" />
+                                  <TableColumn fx:id="idColumn" prefWidth="74.0" text="ID" />
+                                  <TableColumn fx:id="nameColumn" prefWidth="140.0" text="Name" />
+                                    <TableColumn fx:id="birthdayColumn" minWidth="6.0" prefWidth="100.0" text="Birthday" />
+                                    <TableColumn fx:id="genderColumn" prefWidth="77.0" text="Gender" />
+                                    <TableColumn fx:id="emailColumn" prefWidth="136.0" text="Email" />
+                                    <TableColumn fx:id="positionColumn" prefWidth="106.0" text="Position" />
+                                    <TableColumn fx:id="coeffColumn" prefWidth="56.0" text="Coeff" />
+                                    <TableColumn fx:id="workdayColumn" prefWidth="97.0" text="Workday" />
+                                    <TableColumn fx:id="salaryColumn" minWidth="0.0" prefWidth="128.0" text="Salary" />
                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
                               </TableView>
-                              <Button alignment="BASELINE_RIGHT" layoutX="351.0" layoutY="6.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="78.0" text="Delete" />
-                              <Button alignment="BASELINE_RIGHT" layoutX="224.0" layoutY="6.0" mnemonicParsing="false" onAction="#addEmployee" prefHeight="32.0" prefWidth="67.0" text="Add" />
+                              <Button alignment="BASELINE_RIGHT" layoutX="351.0" layoutY="6.0" mnemonicParsing="false" onAction="#deleteEmployee" prefHeight="32.0" prefWidth="78.0" text="Delete" />
+                              <Button fx:id="addEmployee" alignment="BASELINE_RIGHT" layoutX="224.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleAddEmployee" prefHeight="32.0" prefWidth="67.0" text="Add" />
                               <ImageView fitHeight="32.0" fitWidth="31.0" layoutX="224.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@images/person_add_FILL1_wght400_GRAD0_opsz48.png" />
                                  </image>
                               </ImageView>
-                              <Button alignment="BASELINE_RIGHT" layoutX="291.0" layoutY="6.0" mnemonicParsing="false" onAction="#editEmployee" prefHeight="32.0" prefWidth="60.0" text="Edit" />
+                              <Button alignment="BASELINE_RIGHT" layoutX="291.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleEditEmployee" prefHeight="32.0" prefWidth="60.0" text="Edit" />
                               <ImageView fitHeight="32.0" fitWidth="30.0" layoutX="291.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@images/outline_edit_black_24dp.png" />
@@ -128,26 +131,37 @@
                                     <Image url="@images/person_remove_FILL1_wght400_GRAD0_opsz48.png" />
                                  </image>
                               </ImageView>
-                              <TextField alignment="BASELINE_LEFT" layoutX="82.0" layoutY="7.0" prefHeight="30.0" prefWidth="142.0" />
+                              <TextField fx:id="searchTextField" alignment="BASELINE_LEFT" layoutX="82.0" layoutY="7.0" prefHeight="30.0" prefWidth="142.0" />
                               <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="52.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@images/person_search_FILL1_wght400_GRAD0_opsz48.png" />
                                  </image>
                               </ImageView>
-                              <TextField alignment="BASELINE_RIGHT" layoutX="429.0" layoutY="6.0" prefHeight="32.0" prefWidth="60.0" />
+                              <TextField fx:id="filteredSalaryTextField" alignment="BASELINE_RIGHT" layoutX="429.0" layoutY="6.0" prefHeight="32.0" prefWidth="60.0" />
                               <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="431.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@images/outline_filter_alt_black_24dp.png" />
                                  </image>
                               </ImageView>
-                              <ComboBox layoutX="489.0" layoutY="6.0" prefHeight="32.0" prefWidth="67.0" />
-                              <Button alignment="BASELINE_RIGHT" layoutX="556.0" layoutY="6.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="102.0" text="Assign Role">
+                              <ComboBox fx:id="filteredPositionComboBox" layoutX="489.0" layoutY="6.0" onAction="#filteredPosition" prefHeight="32.0" prefWidth="94.0" />
+                              <Button fx:id="assignRole" alignment="BASELINE_RIGHT" layoutX="583.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleAssignRole" prefHeight="32.0" prefWidth="102.0" text="Assign Role">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
-                                 </font></Button>
-                              <ImageView fitHeight="38.0" fitWidth="30.0" layoutX="556.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                 </font>
+                              </Button>
+                              <ImageView fitHeight="38.0" fitWidth="30.0" layoutX="583.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@images/outline_add_black_24dp.png" />
+                                 </image>
+                              </ImageView>
+                              <Button alignment="BASELINE_RIGHT" layoutX="685.0" layoutY="6.0" mnemonicParsing="false" onAction="#saveBinaryEmployeeData" prefHeight="32.0" prefWidth="72.0" text="Save">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <ImageView fitHeight="32.0" fitWidth="30.0" layoutX="685.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/save_as_F4.png" />
                                  </image>
                               </ImageView>
                            </children>

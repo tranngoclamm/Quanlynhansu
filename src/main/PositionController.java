@@ -1,19 +1,15 @@
 package main;
 
-import java.awt.Toolkit;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Optional;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -25,12 +21,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
@@ -57,7 +51,6 @@ public class PositionController {
 	@FXML
 	private TextField salaryCoefficientTextField;
 	private static PositionController instance;
-//	private ObservableList<Position> positionList;
 	private ArrayList<Position> data = new ArrayList<>();
 	String title = "";
 
@@ -97,7 +90,48 @@ public class PositionController {
 		positionTableView.setItems(positionList);
 		
 	}
-	
+	/**
+	 * hiển thị giao diện khi thêm / sửa chức vụ.
+	 */
+
+	@FXML
+	public void handleAddButton() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../giaodien/PositionForm.fxml"));
+			Parent root = loader.load();
+			PositionControllerFunctions positioncontrollerfunctions = loader.getController();
+			Position a = new Position(title, 0);
+			positioncontrollerfunctions.setData(a, "Add");
+			Stage positionFormStage = new Stage();
+			positionFormStage.setTitle("Add Position");
+			positionFormStage.setResizable(false);
+			positionFormStage.setScene(new Scene(root));
+			positionFormStage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@FXML
+	public void handleEditButton() throws IOException {
+		try {
+			Position selectedPosition = positionTableView.getSelectionModel().getSelectedItem();
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../giaodien/PositionForm.fxml"));
+			Parent root = loader.load();
+			Stage positionFormStage = new Stage();
+			positionFormStage.setTitle("Edit Position");
+			positionFormStage.setResizable(false);
+			positionFormStage.setScene(new Scene(root));
+			PositionControllerFunctions positioncontrollerfunctions = loader.getController();
+			positioncontrollerfunctions.setData(selectedPosition, "Edit");
+			positionFormStage.show();
+		} catch (Exception e) {
+			Alert alert;
+			alert = new Alert(AlertType.ERROR, "Bạn chưa chọn chức vụ để sửa");
+			alert.showAndWait();
+			return;
+		}
+	}
 	/**
 	 * lưu file nhị phân
 	 */

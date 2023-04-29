@@ -50,7 +50,8 @@ public class PositionControllerFunctions {
     	}
     }
     
-    public void addEmployee() {
+    
+    public void addPosition() {
     	Alert alert;
     	String positionName = positionNameTextField.getText();
     	try {
@@ -94,7 +95,7 @@ public class PositionControllerFunctions {
     	PositionController.updatePosition();
     	}
     
-    public void editEmployee() throws SQLException {
+    public void editPosition() throws SQLException {
     	Alert alert;
     	String positionNameUpdate = positionNameTextField.getText();
     	Double salaryCoefficientUpdate=Double.parseDouble(salaryCoefficientTextField.getText());
@@ -149,9 +150,9 @@ public class PositionControllerFunctions {
 //	@FXML
 	 public void handleSaveButton(ActionEvent e) throws SQLException {
 		 if (title.equals("Add")) {
-			 addEmployee();
+			 addPosition();
 		 } else if (title.equals("Edit")) {
-			 editEmployee();
+			 editPosition();
 		 }
 		 
 		}

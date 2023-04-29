@@ -15,7 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class PositionCon {
+public class PositionControllerFunctions {
 	@FXML
 	private TextField salaryCoefficientTextField;
     @FXML
@@ -30,7 +30,7 @@ public class PositionCon {
 	String title="";
 
 
-	  public PositionCon() {
+	  public PositionControllerFunctions() {
 	    }
 	    
 	  

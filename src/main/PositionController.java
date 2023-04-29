@@ -57,141 +57,47 @@ public class PositionController {
 	@FXML
 	private TextField salaryCoefficientTextField;
 	private static PositionController instance;
-	private ObservableList<Position> positionList;
+//	private ObservableList<Position> positionList;
+	private ArrayList<Position> data = new ArrayList<>();
 	String title = "";
 
 	public void initialize() {
+		chucVuColumn.setCellValueFactory(new PropertyValueFactory<Position, String>("positionName"));
+		heSoLuongColumn.setCellValueFactory(new PropertyValueFactory<Position, Double>("salaryCoefficient"));
 		positionShow();
 	}
 
 	/**
 	 * hiển thị dữ liệu chức vụ
 	 */
+	public ArrayList<Position> getPosition() {
 
-	public void positionShow() {
 		try {
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/data", "root", "");
-			String sql = "SELECT chuc_vu, he_so_luong FROM data.positiondata";
+
+			String sql = "SELECT * FROM data.positiondata";
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
-			positionList = FXCollections.observableArrayList();
+			data.clear();
 			while (rs.next()) {
 				String chucVu = rs.getString("chuc_vu");
 				double heSoLuong = rs.getDouble("he_so_luong");
 				Position position = new Position(chucVu, heSoLuong);
-				positionList.add(position);
+				data.add(position);
 			}
-			chucVuColumn.setCellValueFactory(new PropertyValueFactory<Position, String>("positionName"));
-			heSoLuongColumn.setCellValueFactory(new PropertyValueFactory<Position, Double>("salaryCoefficient"));
-			positionTableView.setItems(positionList);
-			positionTableView.setStyle("-fx-font-size: 15px;");
-			chucVuColumn.setStyle("-fx-alignment: center;");
-			heSoLuongColumn.setStyle("-fx-alignment: center;");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return data;
 	}
-
-	/**
-	 * xóa chức vụ
-	 */
-	public void deletePosition(ActionEvent e) {
-		Position selected = positionTableView.getSelectionModel().getSelectedItem();
-		Alert alert = new Alert(AlertType.CONFIRMATION);
-		alert.setTitle("Xác nhận");
-		alert.setHeaderText(null);
-		alert.setContentText("Bạn có chắc chắn muốn xóa chức vụ này?");
-		Optional<ButtonType> result = alert.showAndWait();
-		if (result.isPresent() && result.get() == ButtonType.OK) {
-			try {
-				Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/data", "root", "");
-				String sql = "DELETE FROM data.positiondata WHERE chuc_vu = ?";
-				PreparedStatement stmt = conn.prepareStatement(sql);
-				stmt.setString(1, selected.getPositionName());
-				stmt.executeUpdate();
-				positionTableView.getItems().remove(selected);
-				conn.close();
-			} catch (SQLException ex) {
-				ex.printStackTrace();
-			}
-		}
+	
+	public void positionShow() {
+		data = getPosition();
+		ObservableList<Position> positionList = FXCollections.observableList(data);
+		positionTableView.setItems(positionList);
+		
 	}
-
-	/**
-	 * hiển thị giao diện khi thêm / sửa chức vụ.
-	 * 
-	 * @param event
-	 * @throws IOException
-	 */
-//	@FXML
-//	private void handleButtonAction(ActionEvent event) throws IOException {
-//		Button button = (Button) event.getSource();
-//		String action = button.getId();
-//		if (action.equals("addPosition")) {
-//			showPositionForm("Add");
-//		} else if (action.equals("editPosition")) {
-//			showPositionForm("Edit");
-//		}
-//	}
-
-//	public void showPositionForm(String title) throws IOException {
-//		FXMLLoader loader = new FXMLLoader(getClass().getResource("../giaodien/PositionForm.fxml"));
-//		Parent root = loader.load();
-//		if (positionTableView.getSelectionModel().getSelectedItem() != null) {
-//			PositionCon myDestinationObject = loader.getController();
-//			Position selectedPosition = positionTableView.getSelectionModel().getSelectedItem();
-//			myDestinationObject.setMyVariable(selectedPosition, title);
-//		}
-//		Stage positionFormStage = new Stage();
-//		positionFormStage.setTitle(title + " Position");
-//		positionFormStage.setResizable(false);
-//		positionFormStage.setScene(new Scene(root));
-//		positionFormStage.show();
-//	}
-
-	@FXML
-	public void handleAddButton() {
-		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../giaodien/PositionForm.fxml"));
-			Parent root = loader.load();
-			PositionCon myDestinationObject = loader.getController();
-//			EmployeeController a = new (EmployeeController);
-			Position a = new Position(title, 0);
-			myDestinationObject.setData(a, "Add");
-			Stage positionFormStage = new Stage();
-			positionFormStage.setTitle("Add Position");
-			positionFormStage.setResizable(false);
-			positionFormStage.setScene(new Scene(root));
-			positionFormStage.show();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	@FXML
-	public void handleEditButton() throws IOException {
-		try {
-			Position selectedPosition = positionTableView.getSelectionModel().getSelectedItem();
-//			if(selectedPosition == null) {
-//	            throw new Exception("Bạn chưa chọn chức vụ để sửa.");
-//	        }
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../giaodien/PositionForm.fxml"));
-			Parent root = loader.load();
-			Stage positionFormStage = new Stage();
-			positionFormStage.setTitle("Edit Position");
-			positionFormStage.setResizable(false);
-			positionFormStage.setScene(new Scene(root));
-			PositionCon positioncon = loader.getController();
-			positioncon.setData(selectedPosition, "Edit");
-			positionFormStage.show();
-		} catch (Exception e) {
-			Alert alert;
-			alert = new Alert(AlertType.ERROR, "Bạn chưa chọn chức vụ để sửa");
-			alert.showAndWait();
-			return;
-		}
-	}
-
+	
 	/**
 	 * lưu file nhị phân
 	 */
@@ -232,7 +138,6 @@ public class PositionController {
 		ObservableList<Position> allData = positionTableView.getItems();
 		ArrayList<Position> arrayList = new ArrayList<>(allData);
 		FileChooser fileChooser = new FileChooser();
-//	    fileChooser.setTitle("Lưu file dữ liệu nhân viên");
 		fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Binary File", "*.bin"),
 				new ExtensionFilter("All File", "*.*"));
 		File file = fileChooser.showSaveDialog(null);

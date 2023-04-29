@@ -1,6 +1,11 @@
 package main;
 
-public class Employee {
+import java.io.Serializable;
+
+public class Employee implements Serializable {
+	private static final long serialVersionUID = 1485032912857265702L; // fix lỗi class được đọc từ file có serialVersionUID khác với class được định nghĩa 
+
+	
 	private String id;
 	private String name;
 	private String birthday;
@@ -10,8 +15,9 @@ public class Employee {
 	private double salaryCoefficient;
 	private int workday;
 	private String salary;
+	private String note;
 
-    public Employee(String id, String name, String birthday, String gender, String email, String position, double salaryCoefficient, int workday, String salary ) {
+    public Employee(String id, String name, String birthday, String gender, String email, String position, double salaryCoefficient, int workday, String salary, String note) {
         this.id= id;
         this.name=name;
         this.birthday=birthday;
@@ -21,6 +27,7 @@ public class Employee {
         this.salaryCoefficient=salaryCoefficient;
         this.workday=workday;
         this.salary=salary;
+        this.note=note;
     }
     public String getId() {
 		return id;
@@ -93,6 +100,21 @@ public class Employee {
 	public void setSalary(String salary) {
 		this.salary = salary;
 	}
+	public String getNote() {
+		return note;
+	}
+	public void setNote(String note) {
+		this.note=note;
+	}
+	
+	
+    @Override
+    public String toString() {
+        return id + "; " + name + "; "  + birthday + "; " 
+				+ gender + "; " + email + "; " + position + "; " +
+				+ salaryCoefficient + "; " + workday + "; " + salary + "; " + salary;
+    }
+}
 
     
-}
+

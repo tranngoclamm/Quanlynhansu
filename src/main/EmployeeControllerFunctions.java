@@ -24,7 +24,7 @@ import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
-public class EmployeeCon {
+public class EmployeeControllerFunctions {
 	@FXML
 	private TextField idTextField;
 	@FXML
@@ -63,7 +63,7 @@ public class EmployeeCon {
 	private Employee selectedEmployee;
 	String title = "";
 	
-	public EmployeeCon() {
+	public EmployeeControllerFunctions() {
 	}
 
 	public void setData(Employee selectedEmployee, String title) {
